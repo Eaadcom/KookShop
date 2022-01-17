@@ -2,7 +2,6 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {environment} from '../../../environments/environment';
-import {Account} from "../../models/account";
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +14,7 @@ export class ApiService {
     this.endpoint = environment.APIEndpoint;
   }
 
-  get<T>(path: string): Observable<Account> {
+  get<T>(path: string): Observable<T> {
     return this.httpClient.get<T>(this.endpoint + path);
   }
 

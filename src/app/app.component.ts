@@ -11,22 +11,12 @@ import {Account} from "./models/account"
 export class AppComponent {
   title = 'Ed\'s Shop';
   account = {} as Account;
-  email = '';
 
   public constructor(private titleService: Title, private apiService: ApiService) {
     this.setTitle(this.title);
-    this.testConnections();
   }
 
   public setTitle(newTitle: string) {
     this.titleService.setTitle(newTitle);
-  }
-
-  public testConnections(){
-    this.apiService.get('accounts/1').subscribe(response =>
-    {
-      this.account = response
-      this.email = this.account.email!;
-    });
   }
 }
