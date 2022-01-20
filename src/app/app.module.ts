@@ -9,19 +9,22 @@ import { HeaderComponent } from './header/header.component';
 import { AccountComponent } from './account/components/account/account.component';
 import { HomeComponent } from './home/home.component';
 import { NewsComponent } from './news/components/news/news.component';
-import { ShoppingbasketComponent } from './shoppingbasket/shoppingbasket.component';
 import { Routes, RouterModule } from "@angular/router";
 import { NewsitemComponent } from './news/components/newsitem/newsitem.component';
 import { ShopitemComponent } from './shop/components/shopitem/shopitem.component';
 import { RegisterComponent } from './account/components/register/register.component';
 import { LoginComponent } from './account/components/login/login.component';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { ManageAccountComponent } from './account/components/manage-account/manage-account.component';
+import { ShoppingCartComponent } from './shopping-cart/components/shopping-cart/shopping-cart.component';
+import { StorageService } from "./shared/services/storage.service";
+import { CheckoutComponent } from './shopping-cart/components/checkout/checkout.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'account', component: AccountComponent },
   { path: 'shop', component: ShopComponent },
-  { path: 'shoppingbasket', component: ShoppingbasketComponent },
+  { path: 'shoppingcart', component: ShoppingCartComponent },
 ];
 
 @NgModule({
@@ -32,11 +35,13 @@ const appRoutes: Routes = [
     AccountComponent,
     HomeComponent,
     NewsComponent,
-    ShoppingbasketComponent,
     NewsitemComponent,
     ShopitemComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    ManageAccountComponent,
+    ShoppingCartComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +51,7 @@ const appRoutes: Routes = [
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [StorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

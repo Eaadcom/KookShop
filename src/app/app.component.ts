@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import {Title} from "@angular/platform-browser";
-import {ApiService} from "./shared/services/api.service";
-import {Account} from "./models/account"
 
 @Component({
   selector: 'app-root',
@@ -10,9 +8,8 @@ import {Account} from "./models/account"
 })
 export class AppComponent {
   title = 'Ed\'s Shop';
-  account = {} as Account;
 
-  public constructor(private titleService: Title, private apiService: ApiService) {
+  public constructor(private titleService: Title) {
     this.setTitle(this.title);
   }
 

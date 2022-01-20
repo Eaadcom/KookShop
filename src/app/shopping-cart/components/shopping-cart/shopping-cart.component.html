@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-xs-6" *ngIf="shoppingCartEmpty()">
+    <strong>
+      There are no Items in your shopping cart. Go to the Store page and shop around!
+    </strong>
+  </div>
+  <div class="col-xs-6" *ngIf="!checkingOut">
+    <div *ngFor="let item of shoppingCart">
+      <div *ngIf="item[1] > 0">
+        {{item[0]}}
+        <button class="btn btn-success btn-sm counterButtonLeft" (click)="removeFromCart(item[0])">-</button>
+        <button class="btn btn-success btn-sm disabled counter">{{item[1]}}</button>
+        <button class="btn btn-success btn-sm counterButtonRight" (click)="addToCart(item[0])">+</button>
+      </div>
+    </div>
+    <div>
+      <button class="btn btn-success" [disabled]="shoppingCartEmpty()" (click)="checkout()">Checkout</button>
+    </div>
+  </div>
+  <div class="col-xs-6" *ngIf="checkingOut && !loggedIn()">
+    <app-login></app-login>
+  </div>
+  <div class="col-xs-6" *ngIf="checkingOut && loggedIn()">
+    <app-checkout></app-checkout>
+  </div>
+</div>

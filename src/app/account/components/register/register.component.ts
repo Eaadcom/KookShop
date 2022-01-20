@@ -11,6 +11,8 @@ import {AuthService} from "../../services/auth.service";
 export class RegisterComponent implements OnInit {
 
   registerForm!: FormGroup;
+  registered: boolean = false;
+  registerAttempted: boolean = false;
 
   constructor(private formBuilder: FormBuilder, private authService: AuthService) {
   }
@@ -34,7 +36,10 @@ export class RegisterComponent implements OnInit {
     let account = new Account(formValue.emailInputRegister, formValue.passwordInputRegister);
 
     this.authService.register(account).subscribe((response => {
-      console.log(response);
+      if (response.message === "CREATED" ) {
+        this.registered = true;
+      }
+      this.registerAttempted = true;
     }));
   }
 

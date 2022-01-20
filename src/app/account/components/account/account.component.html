@@ -1,5 +1,14 @@
-<div class="container-fluid">
-  <app-register></app-register>
-  <app-login></app-login>
+<div class="row">
+  <div class="col-xs-12 col-xs-offset-3" *ngIf="!JWTIsPresent()">
+    <app-register *ngIf="!loginMode"></app-register>
+    <app-login *ngIf="loginMode" (loginEmitter)="changeLoginState($event)"></app-login>
+  </div>
+  <div class="col-xs-3 col-xs-offset-5" *ngIf="!JWTIsPresent()">
+    <button class="btn btn-default btn-sm" (click)="changeLoginMode()">{{loginMode ? 'Register' : 'Login'}}</button>
+  </div>
+  <div class="col-xs-12" *ngIf="JWTIsPresent()">
+    <app-manage-account></app-manage-account>
+  </div>
 </div>
+
 

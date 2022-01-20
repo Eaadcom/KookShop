@@ -14,6 +14,6 @@ export class NewsitemComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.imagePath = 'assets/' + this.newsItem.image;
+    this.imagePath = 'assets/news/' + this.newsItem.image;
   }
 }

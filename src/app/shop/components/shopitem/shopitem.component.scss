@@ -1,0 +1,42 @@
+img{
+  max-width: 20vw;
+  max-height: 20vh;
+  border: 1px solid gray;
+  border-radius: 2px;
+}
+
+.row{
+  max-width: 30vw;
+  max-height: 24vw;
+  padding-bottom: 7px;
+}
+
+.productDescription{
+  margin-top: 6px;
+  margin-bottom: 4px;
+  min-height: 40px;
+}
+
+.price{
+  margin-right: 1.5em;
+  font-size: 1.2em;
+}
+
+.counter{
+  border-radius: 0;
+}
+
+.counter.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.counterButtonLeft{
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.counterButtonRight{
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}

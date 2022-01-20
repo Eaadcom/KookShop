@@ -1,11 +1,22 @@
-<div>
-  <div>
-    {{product.name}}
+<div class="row">
+  <div class="col-xs-12">
+    <h5>
+      {{product.name}}
+    </h5>
   </div>
-<!--  <div>-->
-<!--    <img src="{{imagePath}}">-->
-<!--  </div>-->
-  <div>
-    {{product.price}}
+  <div class="col-xs-12">
+    <img src="{{imagePath}}">
+  </div>
+  <div class="col-xs-10 col-xs-offset-1 productDescription">
+    {{product.description}}
+  </div>
+  <div class="col-xs-12 col-xs-offset-2">
+    <span class="price">
+      {{"€ " + product.price}}
+    </span>
+    <button class="btn btn-success btn-sm" (click)="addToCart()" *ngIf="!isInCart()">Add to Cart</button>
+    <button class="btn btn-success btn-sm counterButtonLeft" (click)="removeFromCart()" *ngIf="isInCart()">-</button>
+    <button class="btn btn-success btn-sm disabled counter" *ngIf="isInCart()">{{numberInCart}}</button>
+    <button class="btn btn-success btn-sm counterButtonRight" (click)="addToCart()" *ngIf="isInCart()">+</button>
   </div>
 </div>

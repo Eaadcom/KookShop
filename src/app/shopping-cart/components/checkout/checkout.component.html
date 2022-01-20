@@ -1,0 +1,16 @@
+<div class="col-xs-6" *ngIf="!payed">
+  <div *ngFor="let item of shoppingCart">
+    <div *ngIf="item[1] > 0">
+      {{item[0]}}
+      {{item[1]}}
+    </div>
+  </div>
+  <div>
+    <button class="btn btn-success" (click)="handlePayment()">Pay</button>
+  </div>
+</div>
+<div class="col-xs-6" *ngIf="payed">
+  <strong>
+    Thank you for your purchase! You can find an overview of your bought items on your account page!
+  </strong>
+</div>

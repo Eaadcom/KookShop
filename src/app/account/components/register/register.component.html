@@ -58,6 +58,12 @@
       <button type="submit" class="btnSubmit btn btn-success"
               [disabled]="!registerForm.valid || !passwordsMatchValidator()">Register
       </button>
+      <strong *ngIf="registered && registerAttempted">
+        You have been registered successfully!
+      </strong>
+      <strong *ngIf="!registered && registerAttempted">
+        There was a problem with the registration
+      </strong>
     </form>
   </div>
 </div>

@@ -1,9 +1,0 @@
-export class Account{
-
-  constructor(
-    public id?: number,
-    public email?: string,
-    public ownedProducts?: string,
-  ) {}
-
-}
