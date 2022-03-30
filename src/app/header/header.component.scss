@@ -1,24 +1,34 @@
+
+// Top Navbar
+
+.topNavbarBar{
+  background-color: #fff;
+  height: 4vh;
+}
+
+// Bottom Navbar
+
 .navbar{
   background-color: #fff;
   margin-bottom: 0;
+  display: flex;
+  justify-content: center;
+  font-size: 1.25em;
 }
 
-.navDivider{
+// Title bar
 
+.siteTitleBar{
+  background-color: #daad86;
+  height: 19vh;
+  display: flex;
+  justify-content: center;
 }
 
-.navbar-header{
-
-}
-
-.navbar-brand{
-  font-size: 5em;
+.nav-style{
+  font-size: 5.4em;
   font-family: "Arial Black", serif;
-  margin-top: 6vh;
-}
-
-:hover{
-  text-decoration: none;
+  margin-top: 4vh;
 }
 
 .navTitle1{
@@ -33,16 +43,8 @@
   color: #42403d;
 }
 
-.siteTitleBar{
-  background-color: #daad86;
-  height: 19vh;
-}
+// Misc
 
-.topNavbarBar{
-  background-color: #fff;
-  height: 4vh;
-}
-
-.row{
-  overflow-y: auto;
+:hover{
+  text-decoration: none;
 }
