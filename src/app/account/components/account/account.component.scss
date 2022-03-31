@@ -9,3 +9,15 @@ button{
   box-shadow: none;
   text-decoration: underline;
 }
+
+.center-content{
+  margin-top: 15vh;
+  display: flex;
+  justify-content: center;
+}
+
+.center-button{
+  display: flex;
+  justify-content: center;
+}
+
