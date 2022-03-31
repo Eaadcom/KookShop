@@ -18,10 +18,7 @@ export class ManageAccountComponent implements OnInit {
 
   getAccountItems(){
     this.accountService.getAccountItems().subscribe((response => {
-
       this.ownedItems = response;
-      console.log(response);
-
     }));
   }
 

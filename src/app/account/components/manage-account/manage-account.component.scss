@@ -1,0 +1,30 @@
+.manageAccount{
+  background-color: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  padding: 15px;
+  width: 40vw;
+
+  font-size: 1.2em;
+}
+
+.accountDetails{
+  display: flex;
+  justify-content: center;
+}
+
+.email{
+  margin-left: 1em;
+}
+
+.ownedItems{
+  margin-top: 3vh;
+  display: flex;
+  justify-content: center;
+}
+
+.logout{
+  margin-top: 5vh;
+  display: flex;
+  justify-content: center;
+}
