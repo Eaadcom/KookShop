@@ -1,0 +1,23 @@
+.thankYouMessage{
+  font-size: 1.3em;
+}
+
+.paymentScreen{
+  padding-top: 3vh;
+  padding-bottom: 5vh;
+  width: 23vw;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px 10px 15px 15px;
+}
+
+.itemsBeingBought{
+  display: flex;
+  justify-content: center;
+}
+
+.payButton{
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5vh;
+}

@@ -1,15 +1,15 @@
-<div class="col-xs-6" *ngIf="!payed">
-  <div *ngFor="let item of shoppingCart">
+<div class="paymentScreen" *ngIf="!payed">
+  <div class='itemsBeingBought' *ngFor="let item of shoppingCart">
     <div *ngIf="item[1] > 0">
-      {{item[0]}}
       {{item[1]}}
+      {{item[0]}}
     </div>
   </div>
-  <div>
+  <div class="payButton">
     <button class="btn btn-success" (click)="handlePayment()">Pay</button>
   </div>
 </div>
-<div class="col-xs-6" *ngIf="payed">
+<div class="thankYouMessage" *ngIf="payed">
   <strong>
     Thank you for your purchase! You can find an overview of your bought items on your account page!
   </strong>
