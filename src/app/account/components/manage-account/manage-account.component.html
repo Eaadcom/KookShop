@@ -1,21 +1,22 @@
 <div class="manageAccount">
-  <div class="accountDetails">
-    <strong>
-      Ingelogd Account:
-    </strong>
-    <div class="email">
-      {{"eaadcom@gmail.com"}}
-    </div>
-  </div>
-  <div class="ownedItems">
+<!--  <div class="accountDetails">-->
+<!--    <strong>-->
+<!--      Ingelogd Account:-->
+<!--    </strong>-->
+<!--    <div class="email">-->
+<!--      {{"eaadcom@gmail.com"}}-->
+<!--    </div>-->
+<!--  </div>-->
+  <div class="ownedItemsTitle">
     <strong>
       Owned Items:
     </strong>
-    <div class="ownedItem" *ngFor="let item of ownedItems">
-      <div>
-        {{item.productName}}
-        {{item.amount}}
-      </div>
+  </div>
+  <div class="ownedItems" *ngIf="!userHasOwnedItems">Je hebt nog geen gerechten gekocht, kijk eens rond in de shop!</div>
+  <div class="ownedItems" *ngFor="let item of ownedItems">
+    <div>
+      {{item.amount + 'x'}}
+      {{item.productName}}
     </div>
   </div>
   <div class="logout">

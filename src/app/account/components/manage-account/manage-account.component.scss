@@ -18,13 +18,21 @@
 }
 
 .ownedItems{
+  margin-top: 0.5vh;
+  display: flex;
+  justify-content: center;
+}
+
+.ownedItemsTitle{
   margin-top: 3vh;
+  margin-bottom: 1.5vh;
   display: flex;
   justify-content: center;
 }
 
 .logout{
-  margin-top: 5vh;
+  margin-top: 4vh;
+  margin-bottom: 1vh;
   display: flex;
   justify-content: center;
 }

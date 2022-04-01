@@ -28,11 +28,16 @@ export class ManageAccountComponent implements OnInit {
     this.accountService.getAccountItems().pipe(
       map(response => {
         this.ownedItems = response;
+        this.userHasOwnedItems();
       }), catchError(err => of(401))
     ).subscribe(x => {
       if(x == 401) {
         localStorage.removeItem("JWT");
       }
     })
+  }
+
+  userHasOwnedItems(): boolean{
+    return this.ownedItems.length > 0;
   }
 }
