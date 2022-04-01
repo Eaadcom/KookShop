@@ -3,3 +3,14 @@ img{
   margin-bottom: 20px;
   border-bottom: 1px solid #ddd;
 }
+
+@media (max-width: 767px) {
+  img{
+    display: none;
+  }
+
+  .newsContainer{
+    display: flex;
+    justify-content: center;
+  }
+}

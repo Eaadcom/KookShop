@@ -1,9 +1,23 @@
-<div class="newsItemHolder">
-  <ul>
-    <li class="list-group" *ngFor="let newsItem of newsItems">
-      <app-newsitem class="list-group-item" [newsItem]="newsItem"></app-newsitem>
-    </li>
-  </ul>
+<div class="newsPage">
+  <div class="newsItemHolder">
+    <ul>
+      <li class="list-group" *ngFor="let newsItem of newsItems">
+        <app-newsitem class="list-group-item" [newsItem]="newsItem"></app-newsitem>
+      </li>
+    </ul>
+  </div>
+  <div class="aboutMe">
+    <div class="title">
+      About Me
+    </div>
+    <div class="imageContainer">
+      <img src="assets/Blije_man_met_annanas_vers.jpg">
+    </div>
+    <div class="aboutMeText">
+      Hallo ik ben Ed en dit is mijn kookblog.
+      Ik heb hier een hele mooie ananas en een tros bananen in de achtergrond.
+
+      Wil je weten hoe ik er aan kom? Blijf het nieuws volgen op deze pagina!
+    </div>
+  </div>
 </div>
-
-

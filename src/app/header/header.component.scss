@@ -14,6 +14,7 @@
   display: flex;
   justify-content: center;
   font-size: 1.25em;
+  border-radius: 0;
 }
 
 // Title bar
@@ -47,4 +48,38 @@
 
 :hover{
   text-decoration: none;
+}
+
+@media (max-width: 767px) {
+  .nav-style{
+    font-size: 3.5em;
+  }
+
+  li{
+   float: left;
+  }
+
+  ul{
+    max-width: 100vw;
+  }
+}
+
+@media (max-width: 486px) {
+  .navDivider {
+   display: none;
+  }
+
+  .nav-style{
+    font-size: 2.5em;
+  }
+}
+
+@media (max-width: 384px) {
+  .navbar{
+    font-size: 1em;
+  }
+
+  .nav-style{
+    font-size: 2em;
+  }
 }
