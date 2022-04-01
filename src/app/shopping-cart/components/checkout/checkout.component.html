@@ -1,7 +1,7 @@
 <div class="paymentScreen" *ngIf="!payed">
   <div class='itemsBeingBought' *ngFor="let item of shoppingCart">
     <div *ngIf="item[1] > 0">
-      {{item[1]}}
+      {{item[1] + 'x'}}
       {{item[0]}}
     </div>
   </div>

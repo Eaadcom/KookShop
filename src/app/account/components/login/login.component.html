@@ -10,6 +10,9 @@
         <input type="password" class="form-control" placeholder="Password *" formControlName="passwordInputLogin"/>
       </div>
       <button type="submit" class="btnSubmit btn btn-success" [disabled]="!loginForm.valid">login</button>
+      <strong *ngIf="badlogin">
+        Incorrect credentials.
+      </strong>
     </form>
   </div>
 </div>

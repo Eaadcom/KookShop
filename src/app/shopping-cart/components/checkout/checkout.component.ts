@@ -9,7 +9,7 @@ import {CheckoutService} from "../../services/checkout.service";
 })
 export class CheckoutComponent implements OnInit {
 
-  shoppingCart: []= [];
+  shoppingCart: [] = [];
   payed: boolean = false;
 
   constructor(private storageService: StorageService,
@@ -21,11 +21,7 @@ export class CheckoutComponent implements OnInit {
 
   handlePayment(){
     this.payed = true;
-    this.checkoutService.shoppingCartToDB(this.shoppingCart).subscribe((response => {
-
-      console.log(response);
-
-    }));
+    this.checkoutService.shoppingCartToDB(this.shoppingCart).subscribe();
     this.storageService.emptyShoppingCart();
   }
 }

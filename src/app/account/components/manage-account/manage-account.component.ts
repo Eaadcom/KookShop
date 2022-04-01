@@ -17,18 +17,14 @@ export class ManageAccountComponent implements OnInit {
     this.getAccountItems();
   }
 
-  // getAccountItems(){
-  //   this.accountService.getAccountItems().subscribe((response => {
-  //     console.log(response.status)
-  //     this.ownedItems = response;
-  //   }));
-  // }
+  logoutButton(){
+    localStorage.removeItem("JWT");
+  }
 
   getAccountItems() {
     this.accountService.getAccountItems().pipe(
       map(response => {
         this.ownedItems = response;
-        this.userHasOwnedItems();
       }), catchError(err => of(401))
     ).subscribe(x => {
       if(x == 401) {

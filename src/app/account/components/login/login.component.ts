@@ -2,6 +2,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../../services/auth.service";
 import {Account} from "../../models/account";
+import {catchError, map, of} from "rxjs";
 
 @Component({
   selector: 'app-login',
@@ -10,6 +11,7 @@ import {Account} from "../../models/account";
 })
 export class LoginComponent implements OnInit {
 
+  badlogin: boolean = false;
   loginForm!: FormGroup;
   loggedIn: boolean = false;
   receivedLoginResponse: boolean = false;
@@ -29,14 +31,20 @@ export class LoginComponent implements OnInit {
     const formValue = this.loginForm.value;
     let account = new Account(formValue.emailInputLogin, formValue.passwordInputLogin)
 
-    this.authService.login(account).subscribe((response => {
-      this.receivedLoginResponse = true;
-
-      if (typeof response.token === "string") {
-        this.changeLoginState();
-        localStorage.setItem('JWT', response.token);
+    this.authService.login(account).pipe(
+      map( response => {
+        this.receivedLoginResponse = true
+        if (typeof response.token === "string") {
+          this.changeLoginState();
+          localStorage.setItem('JWT', response.token);
+        }
+      }), catchError(err => of(401))
+    ).subscribe(x => {
+      if(x == 401) {
+        this.badlogin = true;
       }
-    }));
+    })
+
   }
 
   changeLoginState(){
